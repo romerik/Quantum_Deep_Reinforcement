@@ -84,22 +84,31 @@ pip install -r Quantum_Parametrized_Circuit/requirements.txt
    Run the training with the following command to train for the "Humanoid-V4" or the "Walker2d-v4" robots.
    For Humanoid-v4
 ```bash
+cd Deep_Reinforcement_Learning_Mujoco
 python train_test_mujoco_drl.py --gymenv Humanoid-v4 --sb3_algo SAC --policy_type MlpPolicy --learning_rate 0.003 --train  
 ```
    To train the Walker2d-v4 agent, run the following command
 ```bash
+cd Deep_Reinforcement_Learning_Mujoco
 python train_test_mujoco_drl.py --gymenv walker2d-v4 --sb3_algo SAC --policy_type MlpPolicy --learning_rate 0.003 --train  
 ```
 4. After training the agent you have choosen for atleast 100K timesteps, 
    To Test the Humanoid-v4 model with SAC algorithm, run the following command to test it.
 ```bash
+cd Deep_Reinforcement_Learning_Mujoco
 python train_test_mujoco_drl.py --gymenv Humanoid-v4 --sb3_algo SAC --policy_type MlpPolicy --learning_rate 0.001 --test ./models/SAC_100000.zip
 ```
    To Test the Walker2d-v4 model with SAC algorithm, run the following command to test it.
 ```bash
+cd Deep_Reinforcement_Learning_Mujoco
 python train_test_mujoco_drl.py --gymenv Walker2d-v4 --sb3_algo SAC --policy_type MlpPolicy --learning_rate 0.001 --test ./models/SAC_100000.zip
 ```
 5. Train and test the Quantum Parametrized Circuit using main.py.
+
+```bash
+cd Quantum_Parametrized_Circuit
+python main.py
+```
 
 # Contributors
 - Romerik Lokossou (rlokosso@andrew.cmu.edu)
