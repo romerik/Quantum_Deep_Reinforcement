@@ -1,6 +1,6 @@
 # Quantum Deep Reinforcement Learning
 
-This repository contains implementations of deep reinforcement learning algorithms trained on Mujoco Humanoid-v4 3D environments and Quantum Parametrized Circuit.
+This repository contains implementations of Quantum deep reinforcement learning algorithms trained on Mujoco Humanoid-v4, Walker2d-v4 3D environments and Quantum Parametrized Circuit.
 
 ## Deep Reinforcement Learning (Mujoco)
 
@@ -69,26 +69,40 @@ This repository contains implementations of deep reinforcement learning algorith
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your_username/your_repository.git
+git clone https://github.com/romerik/Quantum_Deep_Reinforcement.git
 ```
 
 2. Install dependencies:
 
 ```bash
-cd your_repository
+cd Quantum_Deep_Reinforcement
 pip install -r Deep_Reinforcement_Learning_Mujoco/requirements.txt
 pip install -r Quantum_Parametrized_Circuit/requirements.txt
 ```
 
 3. Train and test the deep reinforcement learning models using train_test_mujoco_drl.py.
-
-4. Train and test the Quantum Parametrized Circuit using main.py.
+   Run the training with the following command to train for the "Humanoid-V4" or the "Walker2d-v4" robots.
+   For Humanoid-v4
+```bash
+python train_test_mujoco_drl.py --gymenv Humanoid-v4 --sb3_algo SAC --policy_type MlpPolicy --learning_rate 0.003 --train  
+```
+   To train the Walker2d-v4 agent, run the following command
+```bash
+python train_test_mujoco_drl.py --gymenv walker2d-v4 --sb3_algo SAC --policy_type MlpPolicy --learning_rate 0.003 --train  
+```
+4. After training the agent you have choosen for atleast 100K timesteps, 
+   To Test the Humanoid-v4 model with SAC algorithm, run the following command to test it.
+```bash
+python train_test_mujoco_drl.py --gymenv Humanoid-v4 --sb3_algo SAC --policy_type MlpPolicy --learning_rate 0.001 --test ./models/SAC_100000.zip
+```
+   To Test the Walker2d-v4 model with SAC algorithm, run the following command to test it.
+```bash
+python train_test_mujoco_drl.py --gymenv Walker2d-v4 --sb3_algo SAC --policy_type MlpPolicy --learning_rate 0.001 --test ./models/SAC_100000.zip
+```
+5. Train and test the Quantum Parametrized Circuit using main.py.
 
 # Contributors
 - Romerik Lokossou (rlokosso@andrew.cmu.edu)
 - Birhanu Shimelis Girma (bgirmash@andrew.cmu.edu)
 
 
-```bash
-Feel free to adjust and expand upon this template to better suit your project's specific details and requirements!
-```
