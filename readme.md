@@ -1,4 +1,4 @@
-# Quantum Deep Reinforcement Learning
+# Quantum Deep Reinforcement Learning for Humanoid Robot Navigation
 
 This repository contains implementations of Quantum deep reinforcement learning algorithms trained on Mujoco Humanoid-v4, Walker2d-v4 3D environments and Quantum Parametrized Circuit.
 
